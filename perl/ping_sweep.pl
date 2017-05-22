@@ -27,18 +27,13 @@ for ($counter = $rawip1;$counter<=$rawip2;$counter++){
 #get the raw version of an IP
 
 sub get_raw_address {
-    my
-    my
-    my
-    my
-    my
-    my
-    $ipaddress;
-    $oct1;
-    $oct2;
-    $oct3;
-    $oct4;
-    $retval;
+    my $ipaddress;
+    my $oct1;
+    my $oct2;
+    my $oct3;
+    my $oct4;
+    my $retval;
+
     $ipaddress = shift;
     ($oct1, $oct2, $oct3, $oct4) = split /\./, $ipaddress;
     $retval = $oct4 + ($oct3 * 2**8) + ($oct2 * 2**16) + ($oct1 * 2**24);
@@ -49,14 +44,11 @@ sub get_raw_address {
 #get the regular version of an IP
 
 sub get_ip_address {
-    my
-    my
-    my
-    my
-    $rawaddress;
-    $retval;
-    $oct;
-    $counter;
+    my $rawaddress;
+    my $retval;
+    my $oct;
+    my $counter;
+
     $rawaddress = shift;
     while ($counter<4){
         $oct = $rawaddress % 2**8; #get the rightmost 8 bits
@@ -66,7 +58,7 @@ sub get_ip_address {
     }
     chop $retval;
     if ($retval =~ m/\.(255 |0)$/) { # skip 0 & 255 addresses
-    return 0;
+        return 0;
     }
     print "retval = ", $retval, "\n";
     return $retval;
