@@ -1,0 +1,4 @@
+# ignore pdfs
+*.pdf
+# Ignored directory for files not to be shared.
+ignored
