@@ -1,0 +1,37 @@
+#/bin/bash # bash script
+host=$1 # set host variable to the first argument
+startport=$2 # set startport variable to the first argument
+stopport=$3 # set stopport variable to the first argument
+#Ping function
+  #ping device to see if it's up
+    function pingcheck # Declare the pingcheck function
+    {
+    ping=`ping -c 1 $host | grep bytes | wc -l` # create a ping variable that contains the results of the ping command with a count of 1, 
+# using the host supplied by the host variable. Pipe the output to grep, which grabs the term bytes, then pipe the result to wc with the lines option to count the number of lines
+   
+     if [ "$ping" -gt 1 ];then
+       echo "$host is up"; # If the result of the ping attempt is more than one line, then the ping succeeded, notify the user
+   
+     else
+       echo "$host is down... I quit!"; #If we got only one line in return, the host is down, exit our script
+       exit
+     fi
+     }
+# Portcheck Function
+# test a port to see if it's open
+   function portcheck #declare the portcheck function
+   {
+   for ((counter=$startport; counter<=$stopport;counter++)) # set up a counter that increments each time through the loop, we start with the
+# $startport variable and end with the $stopport
+
+   do
+      (echo >/dev/tcp/$host/$counter) > /dev/null 2>&1 && "TCP $counter open" # echo an empty string to
+# /dev/tcp/ourhost/currentportnumber(counter) AND if the result is successful then redirect the output to /dev/null, redirect errors to the console, and print a message. 
+
+      (echo >/dev/udp/$host/$counter) > /dev/null 2>&1 && "UDP $counter open" # do the same thing but with UDP instead
+
+   done
+   }
+#Run our functions
+pingcheck # call the pingcheck function
+portcheck # call the portcheck function
