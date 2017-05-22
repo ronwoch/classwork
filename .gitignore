@@ -2,3 +2,5 @@
 *.pdf
 # Ignored directory for files not to be shared.
 ignored
+#ignore downloaded oui.txt
+oui.txt
