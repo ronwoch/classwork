@@ -3,7 +3,7 @@
 #===========================================================
 # Ronald Wochner
 # 5/23/2017
-# Version 1
+# Version 1.1
 # Simple bash script to create the boiler plate for scripts of different languages
 #===========================================================
 
@@ -21,32 +21,32 @@ then
 fi
 
 case "$3" in 
-    'bash') echo "creating a $language script... "
+    [B|b]'ash') echo "creating a $language script... "
         language='bash'
         shbang='/bin/bash'
         ;;
     
-    'powershell') echo "creating a $language script... " 
+    [P|p]'owershell') echo "creating a $language script... " 
         language='powershell'
         shbang='/usr/bin/powershell'
         ;;
 
-    'python') echo "creating a $language script... " 
+    [P|p]'ython') echo "creating a $language script... " 
         language='python'
         shbang='/usr/bin/python'
         ;;
 
-    'perl') echo "creating a $language script... " 
+    [P|p]'erl') echo "creating a $language script... " 
         language='perl'
         shbang='/usr/bin/perl'
         ;;
 
-    'ruby') echo "creating a $language script... " 
+    [R|r]'uby') echo "creating a $language script... " 
         language='ruby'
         shbang='/usr/bin/ruby'
         ;;
 
-    'php') echo "creating a $language script... " 
+    [P|p]'hp') echo "creating a $language script... " 
         language='php'
         shbang='/usr/bin/php'
         ;;
@@ -71,7 +71,9 @@ else
  echo "# Version 1" >> $file_name
  echo "# Simple $language script to $description" >> $file_name
  echo "#=========================================================================================" >> $file_name
- echo "\n\n\n" >> $file_name
+ echo "" >> $file_name
+ echo "" >> $file_name
+ echo "" >> $file_name
  echo "Added date: $today and description: $description"
  echo "Changing permisions on "$file_name""
  chmod a+x "$file_name"
