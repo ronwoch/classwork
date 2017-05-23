@@ -31,10 +31,11 @@ $retries = 1;
 
 for ($counter = $rawip1;$counter<=$rawip2;$counter++) {
     $host = get_ip_address($counter);
+    print("host is:\n$host\n");
     $pinger = Net::Ping->new("icmp", 1, 64);
-    if ($ping->ping($host)) {
+    if ($pinger->ping($host)) {
         print "\n$host is up\n";
-        push (@log, "\n$host is up\n";
+        push (@log, "\n$host is up\n");
         &init_snmp;
         &get_snmp_info;
         $session->close;
