@@ -21,32 +21,32 @@ then
 fi
 
 case "$3" in 
-    [B|b]'ash') echo "creating a $language script... "
+    [Bb]'ash') echo "creating a $language script... "
         language='bash'
         shbang='/bin/bash'
         ;;
     
-    [P|p]'owershell') echo "creating a $language script... " 
+    [Pp]'owershell') echo "creating a $language script... " 
         language='powershell'
         shbang='/usr/bin/powershell'
         ;;
 
-    [P|p]'ython') echo "creating a $language script... " 
+    [Pp]'ython') echo "creating a $language script... " 
         language='python'
         shbang='/usr/bin/python'
         ;;
 
-    [P|p]'erl') echo "creating a $language script... " 
+    [Pp]'erl') echo "creating a $language script... " 
         language='perl'
         shbang='/usr/bin/perl'
         ;;
 
-    [R|r]'uby') echo "creating a $language script... " 
+    [Rr]'uby') echo "creating a $language script... " 
         language='ruby'
         shbang='/usr/bin/ruby'
         ;;
 
-    [P|p]'hp') echo "creating a $language script... " 
+    [Pp]'hp') echo "creating a $language script... " 
         language='php'
         shbang='/usr/bin/php'
         ;;
