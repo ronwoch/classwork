@@ -4,3 +4,5 @@
 ignored
 #ignore downloaded oui.txt
 oui.txt
+# ignore the snmp.log
+snmp.log

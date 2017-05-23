@@ -1,6 +1,6 @@
 #!/bin/bash
 #=========================================================================================
-# Ronald Wochner echo 
+# Ronald Wochner 
 # 11 May 2017
 # Version 1.1
 # Simple shell script to Scan TCP and UDP ports
