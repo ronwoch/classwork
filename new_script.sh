@@ -3,7 +3,7 @@
 #===========================================================
 # Ronald Wochner
 # 5/23/2017
-# Version 1.1
+# Version 1.1.1
 # Simple bash script to create the boiler plate for scripts of different languages
 #===========================================================
 
@@ -66,6 +66,7 @@ else
  echo "Created $file_name"
  echo "#!$shbang" >> $file_name
  echo "#=========================================================================================" >> $file_name
+ echo "# $file_name" >> $file_name
  echo "# Ronald Wochner " >> $file_name
  echo "# $today" >> $file_name
  echo "# Version 1" >> $file_name
