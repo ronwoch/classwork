@@ -18,9 +18,9 @@ return[nil,nil]
 end
 
 if ARGV.size <= 0 || ARGV.size > 2
-    print "Usage: #{0} Host [Port]\n"
+    print "Usage:#{$0} Host [Port]\n"
     exit
 end
 server, modified = getHeader(ARGV[0],ARGV[1])
-print "Server #{ARGV[0]}:#ARGV[1] || 80} (#{server}) last modified #{modified}\n"
+print "Server #{ARGV[0]}:#{ARGV[1] || 80} (#{server}) last modified #{modified}\n"
 
