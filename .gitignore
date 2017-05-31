@@ -6,3 +6,6 @@ ignored
 oui.txt
 # ignore the snmp.log
 snmp.log
+# ignore vim swap files
+.*.swp
+.*.swo
