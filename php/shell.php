@@ -15,7 +15,7 @@ if($_POST['command'])
         $out = $_POST['out'] . "\n";
         if(strlen($out) > 2000)
         {
-            $out = substr($out.strlen($out) - 2000,2000);
+            $out = substr($out,strlen($out) - 2000,2000);
         }
     }
     $out . = " > {$_POST['command']}\n";
